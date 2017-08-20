@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .box{
+    height:200px;
+    margin-bottom:5px;
+  }
+  .left{
+    width:100px;
+    height:100%;
+    background-color:rgb(124, 183, 236);
+  }
+  .right{
+    width:100px;
+    height:100%;
+    background-color:rgb(244, 95, 174);
+  }
+  .main{
+    height:100%;
+    background-color:rgb(218, 241, 75);
+  }
+</style>
+<body>
+  <!-- float3栏 -->
+<div id='box1' class='box'>
+  <div id='left1' class='left'></div>
+  <div id='right1' class='right'></div>
+  <div id='main1' class='main'>float</div>
+</div>
+  <style>
+  #left1{
+    float:left;
+  }
+  #right1{
+    float:right;
+  }
+  #main1{
+    margin:0 105px;
+  }
+  </style>
+  <!-- BFC3栏 -->
+  <div id='box2' class='box'>
+    <div id='left2' class='left'></div>
+    <div id='right2' class='right'></div>
+    <div id='main2' class='main'>bfc</div>
+
+  </div>
+    <style>
+    #left2{
+      float:left;
+    }
+    #right2{
+      float:right;
+    }
+    #main2{
+      overflow:auto;
+      margin:0 105px;
+    }
+    </style>
+      <!-- absolute -->
+    <div id='box3' class='box'>
+      <div id='main3' class='main'>absolute</div>
+      <div id='left3' class='left'></div>
+      <div id='right3' class='right'></div>
+    </div>
+      <style>
+      #box3{
+        position:relative;
+      }
+      #left3{
+        position:absolute;
+        top:0;
+        left:0;
+      }
+      #right3{
+        position:absolute;
+        right:0;
+        top:0;
+      }
+      #main3{
+        margin:0 105px;
+      }
+      </style>
+      <!-- 圣杯 -->
+    <div id='box4' class='box'>
+      <div id='main4' class='main'>圣杯</div>
+      <div id='left4' class='left'></div>
+      <div id='right4' class='right'></div>
+    </div>
+      <style>
+      #box4{
+      overflow:hidden;
+      padding:0 105px;
+      }
+      #left4{
+        float:left;
+        position:relative;
+        left:-105px;
+        margin-left:-100%;
+      }
+      #right4{
+        float:left;
+        position:relative;
+        right:-105px;
+        margin-left:-100px;
+      }
+      #main4{
+        float:left;
+        width:100%;
+      }
+      </style>
+
+      <!-- flex -->
+    <div id='box5' class='box'>
+      <div id='main5' class='main'>flex</div>
+      <div id='left5' class='left'></div>
+      <div id='right5' class='right'></div>
+    </div>
+      <style>
+      #box5{
+        display:flex;
+      }
+      #left5{
+        order:-1;
+      }
+      #right5{
+        order:1
+      }
+      #main5{
+        flex:1;
+        margin:0 5px;
+        order:0;
+      }
+      </style>
+</body>
+</html>

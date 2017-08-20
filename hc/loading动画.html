@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>loading动画</title>
+  <style>
+  .box{
+    height:300px;
+    width:100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+  }
+  </style>
+</head>
+<body>
+  <div class='loading1 box' >
+    <div id='div1'></div>
+    <div id='div2'></div>
+    <div id='div3'></div>
+    <div id='div4'></div>
+    <div id='div5'></div>
+  </div>
+  <style>
+  .loading1 div{
+    margin:0 5px;
+    width:7px;
+    height:30px;
+    background-color:rgb(135, 201, 245);
+    -webkit-animation: loading1 1.2s infinite ease-in-out;
+            animation: loading1 1.2s infinite ease-in-out;
+  }
+  #div1{
+    -webkit-animation-delay:0;
+            animation-delay:0;
+  }
+  #div2{
+    -webkit-animation-delay:0.2s;
+            animation-delay:0.2s;
+  }
+  #div3{
+    -webkit-animation-delay:0.3s;
+            animation-delay:0.3s;
+  }
+  #div4{
+    -webkit-animation-delay:0.4s;
+            animation-delay:0.4s;
+  }
+  #div5{
+    -webkit-animation-delay:0.5s;
+            animation-delay:0.5s;
+  }
+  @-webkit-keyframes loading1 {
+    20%{
+      -webkit-transform:scaleY(2.4);
+              transform:scaleY(2.4);
+    }
+    0%,40%,100%{
+      -webkit-transform:scaley(1);
+              transform:scaley(1);
+    }
+  }
+  @keyframes loading1 {
+    20%{
+      -webkit-transform:scaleY(2.4);
+              transform:scaleY(2.4);
+    }
+    0%,40%,100%{
+      -webkit-transform:scaley(1);
+              transform:scaley(1);
+    }
+  }
+  </style>
+
+  <div class='box loading2'>
+    <div class='cir' id='cir1'></div>
+    <div class='cir' id='cir2'></div>
+    <div class='cir' id='cir3'></div>
+  </div>
+  <style>
+    .cir{
+      width:20px;
+      height:20px;
+      margin:0 5px;
+      border-radius:100%;
+      background-color:rgb(59, 231, 164);
+      -webkit-animation:cir 1.2s infinite;
+              animation:cir 1.2s infinite;
+    }
+    #cir1{
+      -webkit-animation-delay:0s;
+              animation-delay:0s
+    }
+    #cir2{
+      -webkit-animation-delay:0.2s;
+              animation-delay:0.2s;
+    }
+    #cir3{
+      -webkit-animation-delay:0.4s;
+              animation-delay:0.4s;
+    }
+    @-webkit-keyframes cir {
+      40%{
+        -webkit-transform:scale(1.0);
+                transform:scale(1.0)
+      }
+      0%,20%,100%{
+        -webkit-transform:scale(0.0);
+                transform:scale(0.0)
+      }
+    }
+    @keyframes cir {
+      40%{
+        -webkit-transform:scale(1.0);
+                transform:scale(1.0)
+      }
+      0%,20%,100%{
+        -webkit-transform:scale(0.0);
+                transform:scale(0.0)
+      }
+    }
+  </style>
+</body>
+</html>
