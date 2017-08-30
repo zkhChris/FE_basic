@@ -1,6 +1,6 @@
 let p=document.getElementsByClassName('img-g')[0];
 let button=document.querySelectorAll('.button-g span')
-let timer=setInterval(move,3000);
+window.timer=setInterval(move,3000);
 function move(){
   if(parseInt(p.style.left)>-1200){
     p.style.left=parseInt(p.style.left)-300+'px'
@@ -33,4 +33,10 @@ function tog(index){
     button[i].style.backgroundColor='#eee'
   }
   button[index].style.backgroundColor='rgb(215, 81, 15)';
+}
+p.onmouseover=function(){
+  clearInterval(window.timer)
+}
+p.onmouseout=function(){
+  window.timer=setInterval(move,3000);
 }
