@@ -1,10 +1,10 @@
 <template>
     <div id='swiper_img_box'>
     <transition-group name='image' tag="ul" class='swiper_img_ul'>
-        <img  :src='img.src' :alt='img.alt' v-for="(img,index) in imgs" :key='index' v-show='img.index==showIndex' @mouseover='stop' @mouseout='start'>
+        <img  :src='img.src' :alt='img.alt' v-for="(img,index) in imgs" :key='index' v-show='index==showIndex' @mouseover='stop' @mouseout='start'>
     </transition-group>
         <ul class='buttonG'>
-        <span v-for='(img,index) in imgs' :key='index' :class="[index==showIndex-1 ? 'color' : 'white', 'circle']" @click='goto(index)'></span>
+        <span v-for='(img,index) in imgs' :key='index' :class="[index==showIndex ? 'color' : 'white', 'circle']" @click='goto(index)'></span>
         </ul>
     </div>
 </template>
@@ -16,23 +16,19 @@ export default{
       imgs:[
             {
             src:'../../dist/7.gif',
-            alt:'1',
-            index:1
+            alt:'1'
             },{
             src:'../../dist/home_06.gif',
-            alt:'2',
-            index:2
+            alt:'2'
             },{
             src:'../../dist/home_08.gif',
-            alt:'3',
-            index:3
+            alt:'3'
             },{
             src:'../../dist/home_12.gif',
-            alt:'4',
-            index:4
+            alt:'4'
             }
           ],
-          showIndex:1
+          showIndex:0
     }
     },
   mounted:function(){
@@ -41,21 +37,20 @@ export default{
 ,
   methods:{
     changeIndex(){
-      if(this.showIndex>=this.imgs.length){
-        this.showIndex=1
+      if(this.showIndex>=this.imgs.length-1){
+        this.showIndex=0
       }else{
         this.showIndex++
       }
     },
     stop(){
-      console.log('1')
       clearInterval(this.timer)
     },
     start(){
       this.timer=setInterval(this.changeIndex,2000)
     },
     goto(i){
-      this.showIndex=i+1
+      this.showIndex=i
       this.stop()
       this.start()
     }
@@ -92,9 +87,6 @@ export default{
   .color{
     background-color:#f00;
   }
-
-
-
   .image-enter-active {
             transform: translateX(0);
             transition: all 1s ease;
