@@ -24,6 +24,8 @@ for(let i=0;i<button.length;i++){
   button[i].onclick=function(){
     p.style.left=-300*this.getAttribute('data-index')+'px'
     tog(this.getAttribute('data-index'))
+    clearInterval(window.timer)
+    window.timer=setInterval(move,3000);
   }
 }
 

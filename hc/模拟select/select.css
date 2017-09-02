@@ -1,0 +1,16 @@
+#select_box{
+  position:relative;
+  width:200px;
+  height:40px;
+  background-color:rgb(109, 232, 240);
+}
+#select{
+  position:absolute;
+  padding:0;
+}
+#select li{
+  list-style:none;
+  width:200px;
+  height:40px;
+  background-color:rgb(109, 232, 240);
+}
